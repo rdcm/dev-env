@@ -2,6 +2,6 @@
 
 {
   home.packages = [
-    pkgs-unstable.obsidian
+    pkgs-unstable.telegram-desktop
   ];
 }

@@ -8,10 +8,11 @@
     # apps
     ./modules/apps/vscode.nix
     ./modules/apps/rover.nix
-    ./modules/apps/postman.nix
     ./modules/apps/goland.nix
-    ./modules/apps/obsidian.nix
+    ./modules/apps/postman.nix
+
     ./modules/apps/mattermost.nix
+    ./modules/apps/telegram.nix
     ./modules/apps/qflipper.nix
 
     # packages
