@@ -11,7 +11,6 @@ Home-manager configuration for reproducible dev environment setup on Fedora Linu
 │   ├── home-manager.nix  # Base settings, shell, packages
 │   ├── apps/             # GUI applications
 │   └── packages/         # CLI tools & dev packages
-├── pkgs/              # Custom package definitions
 └── Makefile           # Shortcuts
 ```
 
@@ -19,13 +18,30 @@ Home-manager configuration for reproducible dev environment setup on Fedora Linu
 
 Install Nix:
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --no-daemon
 ```
+
+[Nix - Official Site](https://nixos.org/download/)
 
 Install home-manager and apply:
 ```bash
-nix run home-manager/master -- init --switch
-make sync
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager 
+nix-channel --update
+
+nix-shell '<home-manager>' -A install
+```
+
+[Home Manager - Official Site](https://nix-community.github.io/home-manager/)
+
+Enable experimental features:
+```bash
+touch ~/.config/nix/nix.conf 
+experimental-features = nix-command flakes
+```
+
+Install dependencies:
+```bash
+home-manager switch --flake ~/.config/home-manager
 ```
 
 ## Commands
