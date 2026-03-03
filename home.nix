@@ -5,16 +5,6 @@
     # home manager
     ./modules/home-manager.nix
 
-    # apps
-    ./modules/apps/vscode.nix
-    ./modules/apps/rover.nix
-    ./modules/apps/goland.nix
-    ./modules/apps/postman.nix
-
-    ./modules/apps/mattermost.nix
-    ./modules/apps/telegram.nix
-    ./modules/apps/qflipper.nix
-
     # packages
     ./modules/packages/dev-env.nix
     ./modules/packages/haskell.nix
